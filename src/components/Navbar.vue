@@ -1,15 +1,18 @@
 <template>
   <nav>
     <h1>{{ title }}</h1>
+    <h2>{{ newUrl }}</h2>
+    <h2>{{ myUrls }}</h2>
   </nav>
 </template>
 
 <script>
-/* eslint-disable */
 export default {
   name: "Navbar",
   props: {
-    title: String
+    title: String,
+    newUrl: String,
+    myUrls: String
   }
 };
 </script>
@@ -23,9 +26,9 @@ export default {
 nav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: blue;
-  color: antiquewhite;
+  justify-content: space-evenly;
+  background-color: rgba(8, 138, 104, 0.301);
+  color: rgb(15, 15, 14);
   height: 120px;
   width: 100%;
   position: fixed;
