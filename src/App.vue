@@ -1,6 +1,8 @@
 <template>
-  <Navbar title="LINKIFY" newUrl="New URL" myUrls="My URLS"/>
-  <Form/>
+  <div>
+    <Navbar title="LINKIFY" newUrl="New URL" myUrls="My URLS" />
+    <Form />
+  </div>
 </template>
 
 <script>

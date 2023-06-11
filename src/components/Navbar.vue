@@ -26,11 +26,14 @@ export default {
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   background-color: rgba(8, 138, 104, 0.301);
   color: rgb(15, 15, 14);
-  height: 120px;
-  width: 100%;
   position: fixed;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 130px;
+  width: 100%;
 }
 </style>
