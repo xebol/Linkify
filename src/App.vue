@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar title="LINKIFY" newUrl="New URL" myUrls="My URLS" />
+    <Navbar title="LINKIFY" newUrl="Create New URL" myUrls="My URLS" />
     <Form />
   </div>
 </template>

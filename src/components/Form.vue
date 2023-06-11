@@ -17,7 +17,6 @@ export default {
 </script>
 
 
-
 <style scoped>
 .login-form {
   max-width: 300px;
