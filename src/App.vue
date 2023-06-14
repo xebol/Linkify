@@ -2,7 +2,7 @@
   <div>
     <Navbar title="LINKIFY" newUrl="Create New URL" myUrls="My URLS" />
     <!-- <Form /> -->
-    <MyURLs :urls="urls" @delete-url="deleteUrl"/>
+    <MyURLs :urls="urls" @delete-url="deleteUrl" @add-url="addUrl"/>
   </div>
 </template>
 
@@ -43,6 +43,9 @@ export default
     methods: {
       deleteUrl(id) {
         this.urls = this.urls.filter((url)=> url.id != id);
+      },
+      addUrl() {
+        console.log('Add url here');
       }
     }
   };

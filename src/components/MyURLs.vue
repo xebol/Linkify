@@ -15,7 +15,7 @@
           <td> {{ url.shortURL }} </td>
           <td> {{ url.longURL }}</td>
           <!-- emit custom event for deleting a url -->
-          <td><Button :text="addUrl" id="add-url"/></td>
+          <td><Button :text="addUrl" id="add-url" type="submit" @click="$emit('add-url')"/></td>
           <td><Button :text="deleteUrl" id="delete-url" type="submit" @click="$emit('delete-url', url.id)"/></td>
         </tr>
       </tbody>
