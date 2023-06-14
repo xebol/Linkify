@@ -5,8 +5,9 @@
       <thead>
         <tr>
           <th scope="col">Shortened URL</th>
-          <th scope="col">Long URL</th>
-          <th scope="col">Delete</th>
+          <th scope="col" >Long URL</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -15,6 +16,7 @@
           <td> {{ url.longURL }}</td>
           <!-- emit custom event for deleting a url -->
           <td><button type="submit" @click="$emit('delete-url', url.id)">Delete</button></td>
+          <td><button type="submit" id="add-url">Add</button></td>
         </tr>
       </tbody>
     </table>
@@ -72,7 +74,18 @@ button[type="submit"] {
   background-color: #d63b1c;
   color: #fff;
   border: none;
-  border-radius: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: medium;
+}
+#add-url {
+  width: 100px;
+  padding: 10px;
+  padding-top: 10px;
+  background-color: #B1D8B7;
+  color: black;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
   font-size: medium;
 }
