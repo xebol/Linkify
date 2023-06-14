@@ -15,8 +15,8 @@
           <td> {{ url.shortURL }} </td>
           <td> {{ url.longURL }}</td>
           <!-- emit custom event for deleting a url -->
-          <td><button type="submit" @click="$emit('delete-url', url.id)">Delete</button></td>
-          <td><button type="submit" id="add-url">Add</button></td>
+          <td><Button :text="addUrl" id="add-url"/></td>
+          <td><Button :text="deleteUrl" id="delete-url" type="submit" @click="$emit('delete-url', url.id)"/></td>
         </tr>
       </tbody>
     </table>
@@ -25,10 +25,20 @@
 
 
 <script>
+import Button from './Button.vue';
 export default {
   name: "MyURLs",
   props: {
     urls: Array
+  },
+  components: {
+    Button
+  },
+  data () {
+    return {
+      addUrl: 'Add',
+      deleteUrl: 'Delete'
+    }
   }
 };
 </script>
@@ -67,7 +77,7 @@ tbody tr:hover {
   background-color: #e6e6e6;
 }
 
-button[type="submit"] {
+#delete-url {
   width: 100px;
   padding: 10px;
   padding-top: 10px;
@@ -88,6 +98,10 @@ button[type="submit"] {
   border-radius: 5px;
   cursor: pointer;
   font-size: medium;
+}
+
+#add-url:hover {
+  background-color: #B2D2A4;
 }
 
 button[type="submit"]:hover {
