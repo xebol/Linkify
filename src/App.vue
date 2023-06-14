@@ -2,7 +2,7 @@
   <div>
     <Navbar title="LINKIFY" newUrl="Create New URL" myUrls="My URLS" />
     <!-- <Form /> -->
-    <MyURLs :urls="urls"/>
+    <MyURLs :urls="urls" @delete-url="deleteUrl"/>
   </div>
 </template>
 
@@ -39,6 +39,11 @@ export default
           userID: "aJ48lW",
         }
       ];
+    }, 
+    methods: {
+      deleteUrl(id) {
+        this.urls = this.urls.filter((url)=> url.id != id);
+      }
     }
   };
 </script>

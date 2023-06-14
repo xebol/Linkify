@@ -13,7 +13,8 @@
         <tr :key="url.id" v-for="url in urls">
           <td> {{ url.shortURL }} </td>
           <td> {{ url.longURL }}</td>
-          <td><button type="submit">Delete</button></td>
+          <!-- emit custom event for deleting a url -->
+          <td><button type="submit" @click="$emit('delete-url', url.id)">Delete</button></td>
         </tr>
       </tbody>
     </table>
