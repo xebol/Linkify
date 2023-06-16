@@ -38,14 +38,14 @@ export default {
         userID: generateRandomString()
       };
 
-      this.$emit('submit-url', createNewUrl);
+      this.$emit('submit-new-url', createNewUrl);
 
       //return the default input once form is submitted
       this.longURL = "";
       console.log(createNewUrl);
     }
   },
-  emits: ['submit-url']
+  emits: ['submit-new-url']
 };
 </script>
 

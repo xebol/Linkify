@@ -4,7 +4,7 @@
     <!-- <Form /> -->
     <MyURLs v-if="addNewUrl === 'MyURLs'" :urls="urls" @delete-url="deleteUrl"
       @add-url="addUrl" />
-    <AddURL v-else @submit-url="submitUrl" />
+    <AddURL v-else @submit-new-url="submitUrl" />
   </div>
 </template>
 
@@ -27,7 +27,6 @@ export default
       return {
         urls: [],
         addNewUrl: 'MyURLs',
-        submitNewUrl: 'AddURL'
       };
     },
     created() {
@@ -53,8 +52,9 @@ export default
       addUrl() {
         this.addNewUrl = 'AddURL';
       },
-      submitUrl() {
+      submitUrl(url) {
         this.addNewUrl = 'MyURLs';
+        this.urls = [...this.urls, url]
       }
     }
   };
