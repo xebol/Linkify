@@ -2,10 +2,9 @@
   <div>
     <Navbar title="LINKIFY" newUrl="Create New URL" myUrls="My URLS" />
     <!-- <Form /> -->
-    <!-- <MyURLs v-if="addNewUrl === 'MyURLs'" :urls="urls" @delete-url="deleteUrl"
-      @add-url="addUrl" />
-    <AddURL v-else @submit-new-url="submitUrl" /> -->
-    <NewURL />
+    <MyURLs v-if="addNewUrl === 'MyURLs'" :urls="urls" @delete-url="deleteUrl" @add-url="addUrl" />
+    <AddURL v-if="addNewUrl === 'AddURL'" @submit-new-url="submitUrl" />
+    <NewURL v-if="addNewUrl === 'NewURL'"  @submit-new-url="submitUrl" />
   </div>
 </template>
 
@@ -23,7 +22,7 @@ export default
       Navbar,
       Form,
       MyURLs,
-      AddURL, 
+      AddURL,
       NewURL
     },
     data() {
@@ -53,8 +52,10 @@ export default
         this.addNewUrl = 'AddURL';
       },
       submitUrl(url) {
-        this.addNewUrl = 'MyURLs';
-        this.urls = [...this.urls, url]
+        // this.addNewUrl = 'MyURLs';
+        //redirect to NewURL component instead of MyURLs component
+        this.addNewUrl = 'NewURL';
+        this.urls = [...this.urls, url];
       },
       deleteUrl(id) {
         this.urls = this.urls.filter((url) => url.id !== id);
