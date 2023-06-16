@@ -3,7 +3,7 @@
   <form class="create-new-url" @submit="onSubmit">
     <div class="shorten-url">
       <label>Enter long URL:</label>
-      <input type="fullURL" name="fullURL" placeholder="http://" />
+      <input v-model="longURL" type="longURL" name="longURL" placeholder="http://" required />
       <Button :text="createNewURL" type="submit" id="newUrl" />
     </div>
   </form>
@@ -11,6 +11,7 @@
 
 
 <script>
+import { generateRandomString } from '../helper-functions.js';
 import Button from './Button.vue';
 
 export default {
@@ -20,14 +21,28 @@ export default {
   },
   data() {
     return {
-      createNewURL: "Submit"
+      createNewURL: "Submit",
+      //default value of input
+      longURL: ""
     };
   },
   methods: {
     onSubmit(event) {
+      console.log('Submit new URL');
       event.preventDefault();
 
-      console.log('Submit new URL')
+      const createNewUrl = {
+        id: Math.floor(Math.random() * 100000),
+        shortURL: generateRandomString(),
+        longURL: this.longURL,
+        userID: generateRandomString()
+      };
+
+      this.$emit('add-new-url', createNewUrl);
+
+      //return the default input once form is submitted
+      this.longURL = "";
+      console.log(createNewUrl);
     }
   }
 };
@@ -62,7 +77,7 @@ h3 {
   background-color: #B1D8B7;
 }
 
-input[type="fullURL"] {
+input[type="longURL"] {
   padding: 9px;
   border: 1px solid #ccc;
   border-radius: 4px;

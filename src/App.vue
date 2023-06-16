@@ -2,7 +2,7 @@
   <div>
     <Navbar title="LINKIFY" newUrl="Create New URL" myUrls="My URLS" />
     <!-- <Form /> -->
-    <MyURLs :urls="urls" @delete-url="deleteUrl" @add-url="addUrl" :is="addNewUrl" />
+    <MyURLs v-if="addNewUrl !== 'AddURL'" :urls="urls" @delete-url="deleteUrl" @add-url="addUrl"/>
     <AddURL v-if="addNewUrl === 'AddURL'" />
   </div>
 </template>
