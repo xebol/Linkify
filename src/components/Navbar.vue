@@ -33,7 +33,7 @@ nav {
   position: fixed;
   margin-bottom: 20px;
   align-items: center;
-  height: 130px;
+  height: 100px;
   width: 100%;
   padding-left: 10px;
 }

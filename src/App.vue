@@ -2,7 +2,8 @@
   <div>
     <Navbar title="LINKIFY" newUrl="Create New URL" myUrls="My URLS" />
     <!-- <Form /> -->
-    <MyURLs :urls="urls" @delete-url="deleteUrl" @add-url="addUrl"/>
+    <!-- <MyURLs :urls="urls" @delete-url="deleteUrl" @add-url="addUrl"/> -->
+    <AddURL />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import Navbar from "./components/Navbar.vue";
 import Form from "./components/Form.vue";
 import MyURLs from "./components/MyURLs.vue";
+import AddURL from "./components/AddURL.vue";
 
 export default
   {
@@ -17,7 +19,8 @@ export default
     components: {
       Navbar,
       Form,
-      MyURLs
+      MyURLs,
+      AddURL
     },
     data() {
       return {
