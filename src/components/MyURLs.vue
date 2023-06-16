@@ -1,12 +1,14 @@
 <template>
   <div class="urls-table">
-    <h1>My URLs</h1>
+    <div class="new-url">
+      <h1>My URLs</h1>
+      <Button :text="addUrl" id="add-url" type="submit" @click="$emit('add-url')" />
+    </div>
     <table class="table">
       <thead>
         <tr>
           <th scope="col">Shortened URL</th>
-          <th scope="col" >Long URL</th>
-          <th scope="col"></th>
+          <th scope="col">Long URL</th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -15,8 +17,7 @@
           <td> {{ url.shortURL }} </td>
           <td> {{ url.longURL }}</td>
           <!-- emit custom event for deleting a url -->
-          <td><Button :text="addUrl" id="add-url" type="submit" @click="$emit('add-url')"/></td>
-          <td><Button :text="deleteUrl" id="delete-url" type="submit" @click="$emit('delete-url', url.id)"/></td>
+          <td><Button :text="deleteUrl" id="delete-url" type="submit" @click="$emit('delete-url', url.id)" /></td>
         </tr>
       </tbody>
     </table>
@@ -34,11 +35,11 @@ export default {
   components: {
     Button
   },
-  data () {
+  data() {
     return {
       addUrl: 'Add',
       deleteUrl: 'Delete'
-    }
+    };
   }
 };
 </script>
@@ -46,7 +47,7 @@ export default {
 <style scoped>
 .urls-table {
   /* margin: 20px; */
-  padding-top: 150px;
+  padding-top: 120px;
   padding-left: 25px;
   padding-right: 25px;
 }
@@ -56,7 +57,8 @@ export default {
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   padding: 15px;
   text-align: left;
 }
@@ -64,6 +66,7 @@ th, td {
 td {
   font-size: 1.5em;
 }
+
 thead {
   background-color: #B1D8B7;
   font-size: 1.5em;
@@ -88,12 +91,11 @@ tbody tr:hover {
   cursor: pointer;
   font-size: medium;
 }
+
 #add-url {
   width: 100px;
-  padding: 10px;
-  padding-top: 10px;
-  background-color: #B1D8B7;
-  color: black;
+  background-color: #618166;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -103,8 +105,13 @@ tbody tr:hover {
 #add-url:hover {
   background-color: #B2D2A4;
 }
+.new-url {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
 
 button[type="submit"]:hover {
   background-color: #bd6f16;
-}
-</style>
+}</style>
