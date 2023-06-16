@@ -2,9 +2,10 @@
   <div>
     <Navbar title="LINKIFY" newUrl="Create New URL" myUrls="My URLS" />
     <!-- <Form /> -->
-    <MyURLs v-if="addNewUrl === 'MyURLs'" :urls="urls" @delete-url="deleteUrl"
+    <!-- <MyURLs v-if="addNewUrl === 'MyURLs'" :urls="urls" @delete-url="deleteUrl"
       @add-url="addUrl" />
-    <AddURL v-else @submit-new-url="submitUrl" />
+    <AddURL v-else @submit-new-url="submitUrl" /> -->
+    <NewURL />
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import Navbar from "./components/Navbar.vue";
 import Form from "./components/Form.vue";
 import MyURLs from "./components/MyURLs.vue";
 import AddURL from "./components/AddURL.vue";
+import NewURL from "./components/NewURL.vue";
 
 export default
   {
@@ -21,7 +23,8 @@ export default
       Navbar,
       Form,
       MyURLs,
-      AddURL
+      AddURL, 
+      NewURL
     },
     data() {
       return {
@@ -46,15 +49,15 @@ export default
       ];
     },
     methods: {
-      deleteUrl(id) {
-        this.urls = this.urls.filter((url) => url.id !== id);
-      },
       addUrl() {
         this.addNewUrl = 'AddURL';
       },
       submitUrl(url) {
         this.addNewUrl = 'MyURLs';
         this.urls = [...this.urls, url]
+      },
+      deleteUrl(id) {
+        this.urls = this.urls.filter((url) => url.id !== id);
       }
     }
   };
