@@ -1,6 +1,6 @@
 <template>
   <h3>Shorten URL</h3>
-  <form class="create-new-url">
+  <form class="create-new-url" @submit="onSubmit">
     <div class="shorten-url">
       <label>Enter long URL:</label>
       <input type="fullURL" name="fullURL" placeholder="http://" />
@@ -22,6 +22,13 @@ export default {
     return {
       createNewURL: "Submit"
     };
+  },
+  methods: {
+    onSubmit(event) {
+      event.preventDefault();
+
+      console.log('Submit new URL')
+    }
   }
 };
 </script>
@@ -52,7 +59,7 @@ h3 {
   margin-bottom: 15px;
   font-size: 1.5em;
   border-radius: 10px;
-  background-color: rgba(8, 138, 104, 0.301)
+  background-color: #B1D8B7;
 }
 
 input[type="fullURL"] {

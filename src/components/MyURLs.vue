@@ -46,7 +46,6 @@ export default {
 
 <style scoped>
 .urls-table {
-  /* margin: 20px; */
   padding-top: 120px;
   padding-left: 25px;
   padding-right: 25px;
