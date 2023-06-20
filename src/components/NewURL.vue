@@ -3,11 +3,7 @@
     <div class="new-short-url">
       <h3>New URL for: https://http.cat/ </h3>
       <h5>Shortened URL: aJ48lW</h5>
-      <form class="create-new-url" @submit="onSubmit">
-        <label>Create another URL</label>
-        <input v-model="newLongURL" type="newLongURL" name="newLongURL" placeholder="http://" required>
-        <Button :text="createNewUrl" type="submit" id="shorten-new-url" />
-      </form>
+      <a href="../App.vue"> Home Page</a>
     </div>
   </div>
 </template>
@@ -15,39 +11,9 @@
 
 <script>
 import { generateRandomString } from '@/helper-functions';
-import Button from './Button.vue';
 
 export default {
   name: "NewURL",
-  components: {
-    Button
-  },
-  data() {
-    return {
-      createNewUrl: "Submit",
-      newLongURL: ""
-    };
-  },
-  methods: {
-    onSubmit(event) {
-      console.log('Submit another new URL');
-      event.preventDefault();
-
-      const createNewUrl = {
-        id: Math.floor(Math.random() * 100000),
-        shortURL: generateRandomString(),
-        longURL: this.newLongURL,
-        userID: generateRandomString()
-      };
-
-      this.$emit('submit-new-url', createNewUrl);
-
-      //return the default input once form is submitted
-      this.newLongURL = "";
-      console.log(createNewUrl);
-    }
-  },
-  emits: ['submit-new-url']
 };
 </script>
 
