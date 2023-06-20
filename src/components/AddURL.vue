@@ -34,8 +34,7 @@ export default {
       const createNewUrl = {
         id: Math.floor(Math.random() * 100000),
         shortURL: generateRandomString(),
-        longURL: this.longURL,
-        userID: generateRandomString()
+        longURL: this.longURL
       };
 
       this.$emit('submit-new-url', createNewUrl);

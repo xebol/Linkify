@@ -38,14 +38,12 @@ export default
         {
           id: 1,
           shortURL: "b6UTxQ",
-          longURL: "https://example.com/",
-          userID: "aJ48lW"
+          longURL: "https://example.com/"
         },
         {
           id: 2,
           shortURL: "i3BoGr",
-          longURL: "https://guthib.com/",
-          userID: "aJ48lW",
+          longURL: "https://guthib.com/"
         }
       ];
     },

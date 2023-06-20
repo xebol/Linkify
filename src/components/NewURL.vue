@@ -10,7 +10,6 @@
 
 
 <script>
-import { generateRandomString } from '@/helper-functions';
 
 export default {
   name: "NewURL",
