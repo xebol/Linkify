@@ -3,8 +3,8 @@
     <div class="new-short-url">
       <h3>New URL for: {{ newURL }}</h3>
       <h5>Short URL ID: <a :href="newURL">{{ shortenedURL }}</a></h5>
-      <a href="../App.vue">Homepage</a>
     </div>
+    <a href="../App.vue">Homepage</a>
   </div>
 </template>
 
