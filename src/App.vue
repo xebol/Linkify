@@ -4,7 +4,7 @@
     <!-- <Form /> -->
     <MyURLs v-if="addNewUrl === 'MyURLs'" :urls="urls" @delete-url="deleteUrl" @add-url="addUrl" />
     <AddURL v-if="addNewUrl === 'AddURL'" @submit-new-url="submitUrl" />
-    <NewURL v-if="addNewUrl === 'NewURL'"  @submit-new-url="submitUrl" />
+    <NewURL v-if="addNewUrl === 'NewURL'" @submit-new-url="submitUrl" :newURL="urlInput" :shortenedURL="newShortUrl" />
   </div>
 </template>
 
@@ -29,6 +29,8 @@ export default
       return {
         urls: [],
         addNewUrl: 'MyURLs',
+        urlInput: '',
+        newShortUrl: ''
       };
     },
     created() {
@@ -56,6 +58,8 @@ export default
         //redirect to NewURL component instead of MyURLs component
         this.addNewUrl = 'NewURL';
         this.urls = [...this.urls, url];
+        this.urlInput = url.longURL;
+        this.newShortUrl = url.shortURL;
       },
       deleteUrl(id) {
         this.urls = this.urls.filter((url) => url.id !== id);

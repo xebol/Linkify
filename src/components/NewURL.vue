@@ -1,9 +1,9 @@
 <template>
   <div class="newly-shortened-url">
     <div class="new-short-url">
-      <h3>New URL for: https://http.cat/ </h3>
-      <h5>Shortened URL: aJ48lW</h5>
-      <a href="../App.vue"> Home Page</a>
+      <h3>{{ newURL }}</h3>
+      <h5>{{ shortenedURL }}</h5>
+      <a href="../App.vue">Homepage</a>
     </div>
   </div>
 </template>
@@ -14,6 +14,10 @@ import { generateRandomString } from '@/helper-functions';
 
 export default {
   name: "NewURL",
+  props: {
+    newURL: String,
+    shortenedURL: String
+  }
 };
 </script>
 
