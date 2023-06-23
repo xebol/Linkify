@@ -31,17 +31,30 @@ export default {
       console.log('Submit new URL');
       event.preventDefault();
 
+      const isValidHttpUrl = function(string) {
+        let url;
+        try {
+          url = new URL(string);
+        } catch (_) {
+          return false;
+        }
+        return url.protocol === "http:" || url.protocol === "https:";
+      };
+
       const createNewUrl = {
-        // id: Math.floor(Math.random() * 100000),
         shortURL: generateRandomString(),
         longURL: this.longURL
       };
 
-      this.$emit('submit-new-url', createNewUrl);
+      if (isValidHttpUrl(this.longURL)) {
+        this.$emit('submit-new-url', createNewUrl);
 
-      //return the default input once form is submitted
-      this.longURL = "";
-      console.log(createNewUrl);
+        //return the default input once form is submitted
+        this.longURL = "";
+        console.log(createNewUrl);
+      } else {
+        alert("Invalid URL");
+      }
     }
   },
   emits: ['submit-new-url']
