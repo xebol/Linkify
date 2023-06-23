@@ -1,10 +1,9 @@
 <template>
   <div>
     <Navbar title="LINKIFY" newUrl="Create New URL" myUrls="My URLS" />
-    <!-- <Form /> -->
     <MyURLs v-if="addNewUrl === 'MyURLs'" :urls="urls" @delete-url="deleteUrl" @add-url="addUrl" />
     <AddURL v-if="addNewUrl === 'AddURL'" @submit-new-url="submitUrl" />
-    <NewURL v-if="addNewUrl === 'NewURL'" @submit-new-url="submitUrl" :newURL="urlInput" :shortenedURL="newShortUrl" />
+    <NewURL v-if="addNewUrl === 'NewURL'" :newURL="urlInput" :shortenedURL="newShortUrl" />
   </div>
 </template>
 
