@@ -53,7 +53,7 @@ export default {
         this.longURL = "";
         console.log(createNewUrl);
       } else {
-        alert("Invalid URL");
+        alert("Please enter a valid URL");
       }
     }
   },
