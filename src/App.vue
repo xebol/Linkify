@@ -36,11 +36,20 @@ export default
       addUrl() {
         this.addNewUrl = 'AddURL';
       },
-      submitUrl(url) {
-        // this.addNewUrl = 'MyURLs';
+      async submitUrl(url) {
+        const res = await fetch('api/urls', {
+          method: 'POST',
+          headers: {
+            'Content-type': 'application/json',
+          },
+          body: JSON.stringify(url)
+        });
+
+        const data = await res.json();
+
         //redirect to NewURL component instead of MyURLs component
         this.addNewUrl = 'NewURL';
-        this.urls = [...this.urls, url];
+        this.urls = [...this.urls, data];
         this.urlInput = url.longURL;
         this.newShortUrl = url.shortURL;
       },
@@ -48,7 +57,7 @@ export default
         this.urls = this.urls.filter((url) => url.id !== id);
       },
       async fetchURLs() {
-        const res = await fetch('http://localhost:3000/urls');
+        const res = await fetch('api/urls');
 
         const data = await res.json();
 
