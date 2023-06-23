@@ -32,7 +32,7 @@ export default {
       event.preventDefault();
 
       const createNewUrl = {
-        id: Math.floor(Math.random() * 100000),
+        // id: Math.floor(Math.random() * 100000),
         shortURL: generateRandomString(),
         longURL: this.longURL
       };

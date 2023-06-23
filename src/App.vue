@@ -53,8 +53,12 @@ export default
         this.urlInput = url.longURL;
         this.newShortUrl = url.shortURL;
       },
-      deleteUrl(id) {
-        this.urls = this.urls.filter((url) => url.id !== id);
+      async deleteUrl(id) {
+        const res = await fetch(`api/urls/${id}`, {
+          method: 'DELETE'
+        });
+
+        res.status === 200 ? (this.urls = this.urls.filter((url) => url.id !== id)) : alert("Error deleting task");
       },
       async fetchURLs() {
         const res = await fetch('api/urls');
