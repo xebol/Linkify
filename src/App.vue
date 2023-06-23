@@ -32,20 +32,6 @@ export default
         newShortUrl: ''
       };
     },
-    created() {
-      this.urls = [
-        {
-          id: 1,
-          shortURL: "b6UTxQ",
-          longURL: "https://example.com/"
-        },
-        {
-          id: 2,
-          shortURL: "i3BoGr",
-          longURL: "https://guthib.com/"
-        }
-      ];
-    },
     methods: {
       addUrl() {
         this.addNewUrl = 'AddURL';
@@ -60,8 +46,19 @@ export default
       },
       deleteUrl(id) {
         this.urls = this.urls.filter((url) => url.id !== id);
+      },
+      async fetchURLs() {
+        const res = await fetch('http://localhost:3000/urls');
+
+        const data = await res.json();
+
+        return data;
+
       }
-    }
+    },
+    async created() {
+      this.urls = await this.fetchURLs();
+    },
   };
 </script>
 
