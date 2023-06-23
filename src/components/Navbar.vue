@@ -1,9 +1,9 @@
 <template>
   <nav>
-    <h1>{{ title }}</h1>
+    <button @click="redirectTo('MyURLs')">{{ title }}</button>
     <div class="nav-item">
-      <h2>{{ newUrl }}</h2>
-      <h2>{{ myUrls }}</h2>
+      <button @click="redirectTo('AddURL')">{{ newUrl }}</button>
+      <button @click="redirectTo('MyURLs')">{{ myUrls }}</button>
     </div>
   </nav>
 </template>
@@ -15,12 +15,21 @@ export default {
     title: String,
     newUrl: String,
     myUrls: String
+  },
+  methods: {
+    redirectTo(component) {
+      this.$emit('nav-click', component);
+    }
   }
 };
 </script>
 
 
+
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Long+Cang&display=swap');
+
+
 * {
   box-sizing: border-box;
 }
@@ -35,14 +44,18 @@ nav {
   align-items: center;
   height: 100px;
   width: 100%;
-  padding-left: 10px;
 }
 
-.nav-item {
-  display: flex;
-  padding-left: 25px;
-}
-.nav-item h2{
-  padding-right: 25px;
+button {
+  width: 191px;
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bold;
+  font-family: 'Bungee', cursive;
+  font-size: 21px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar title="LINKIFY" newUrl="Create New URL" myUrls="My URLS" />
+    <Navbar title="LINKIFY" newUrl="Create New URL" myUrls="My URLS" @nav-click="navBarLinks"/>
     <MyURLs v-if="addNewUrl === 'MyURLs'" :urls="urls" @delete-url="deleteUrl" @add-url="addUrl" />
     <AddURL v-if="addNewUrl === 'AddURL'" @submit-new-url="submitUrl" />
     <NewURL v-if="addNewUrl === 'NewURL'" :newURL="urlInput" :shortenedURL="newShortUrl" />
@@ -67,7 +67,15 @@ export default
 
         return data;
 
-      }
+      },
+      navBarLinks(componentName) {
+        console.log("I clicked the NavBar")
+        if (componentName === 'AddURL') {
+          this.addNewUrl = 'AddURL';
+        } else if (componentName === 'MyURLs') {
+          this.addNewUrl = 'MyURLs';
+        }
+      },
     },
     async created() {
       this.urls = await this.fetchURLs();
