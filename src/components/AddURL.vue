@@ -11,7 +11,7 @@
 
 
 <script>
-import { generateRandomString } from '../helper-functions.js';
+import { generateRandomString, isValidHttpUrl } from '../helper-functions.js';
 import Button from './Button.vue';
 
 export default {
@@ -30,16 +30,6 @@ export default {
     onSubmit(event) {
       console.log('Submit new URL');
       event.preventDefault();
-
-      const isValidHttpUrl = function(string) {
-        let url;
-        try {
-          url = new URL(string);
-        } catch (_) {
-          return false;
-        }
-        return url.protocol === "http:" || url.protocol === "https:";
-      };
 
       const createNewUrl = {
         shortURL: generateRandomString(),
