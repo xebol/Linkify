@@ -1,14 +1,14 @@
 <template>
   <div>
     <Navbar title="LINKIFY" newUrl="Create New URL" myUrls="My URLS" @nav-click="navBarLinks"/>
-    <MyURLs v-if="addNewUrl === 'MyURLs'" :urls="urls" @delete-url="deleteUrl" @add-url="addUrl" />
-    <AddURL v-if="addNewUrl === 'AddURL'" @submit-new-url="submitUrl" />
-    <NewURL v-if="addNewUrl === 'NewURL'" :newURL="urlInput" :shortenedURL="newShortUrl" />
+    <router-view></router-view>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
 import Form from "./components/Form.vue";
 import MyURLs from "./components/MyURLs.vue";
 import AddURL from "./components/AddURL.vue";
@@ -22,7 +22,8 @@ export default
       Form,
       MyURLs,
       AddURL,
-      NewURL
+      NewURL,
+      Footer
     },
     data() {
       return {
