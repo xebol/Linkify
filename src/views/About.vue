@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <Navbar title="ABOUT" />
+    <Navbar about="ABOUT" />
     <p>Welcome to Linkify. This app allows you to convert long URLs into shorter ones, making them easier to share and remember.</p>
     <p class="features">Features:</p>
       <p>Shorten any long URL to a compact form</p>
@@ -19,9 +19,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .about {
   text-align: center;
-  padding: 20px;
 }
 </style>

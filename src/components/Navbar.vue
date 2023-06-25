@@ -5,6 +5,7 @@
       <button @click="redirectTo('AddURL')">{{ newUrl }}</button>
       <button @click="redirectTo('MyURLs')">{{ myUrls }}</button>
     </div>
+    <p>{{ about }}</p>
   </nav>
 </template>
 
@@ -14,7 +15,8 @@ export default {
   props: {
     title: String,
     newUrl: String,
-    myUrls: String
+    myUrls: String,
+    about: String
   },
   methods: {
     redirectTo(component) {
@@ -57,5 +59,18 @@ button {
   font-weight: bold;
   font-family: 'Bungee', cursive;
   font-size: 21px;
+}
+ p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-size: medium;
+  font-weight: bold;
+  font-family: 'Bungee', cursive;
+  font-size: 32px;
+  margin-left: 70px;
 }
 </style>
