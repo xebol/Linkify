@@ -13,14 +13,13 @@ import MyURLs from "../components/MyURLs.vue";
 import AddURL from "../components/AddURL.vue";
 import NewURL from "../components/NewURL.vue";
 
-
 export default {
   name: 'Urls',
   components: {
     Navbar,
     MyURLs,
     AddURL,
-    NewURL,
+    NewURL
   },
   data() {
     return {

@@ -54,7 +54,7 @@ export default {
 
 <style scoped>
 h3 {
-  padding-top: 150px;
+  /* padding-top: 150px; */
   font-size: 2em;
   padding-left: 40px;
 }

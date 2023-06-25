@@ -2,9 +2,8 @@
   <footer>
     <p>Copyright &copy; 2023</p>
     <div class="footer-items">
-      <p> <router-link to="/about">About</router-link></p>
-      <p> <router-link to="/">Homepage</router-link>
-      </p>
+       <router-link to="/about">About</router-link>
+         <router-link to="/">Homepage</router-link>
     </div>
   </footer>
 </template>
@@ -21,7 +20,7 @@ a {
 }
 
 footer {
-  margin-top: 270px;
+  margin-top: 250px;
   text-align: center;
   padding-left: 10px;
   display: flex;

@@ -23,7 +23,6 @@ export default {
 .newly-shortened-url {
   display: flex;
   flex-direction: column;
-  padding-top: 50px;
   align-items: center;
 }
 
@@ -32,7 +31,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   padding: 40px;
-  margin-top: 120px;
+  /* margin-top: 100px; */
   align-items: center;
   width: 90vw;
   height: 150px;
