@@ -39,7 +39,7 @@ nav {
   align-items: center;
   background-color: rgba(8, 138, 104, 0.301);
   color: rgb(15, 15, 14);
-  position: fixed;
+  position: relative;
   margin-bottom: 20px;
   align-items: center;
   height: 100px;

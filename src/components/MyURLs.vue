@@ -108,7 +108,7 @@ tbody tr:hover {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  margin-top: 0;
+  margin-top: -120px;
 }
 
 button[type="submit"]:hover {

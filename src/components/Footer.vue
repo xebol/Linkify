@@ -1,7 +1,7 @@
 <template>
   <footer>
     <p>Copyright &copy; 2023</p>
-    <router-link to="/homepage">Homepage</router-link>
+    <router-link to="/about">About</router-link>
   </footer>
 </template>
 
@@ -17,7 +17,7 @@ a {
 }
 
 footer {
-  margin-top: 30px;
+  margin-top: 270px;
   text-align: center;
 }
 </style>
