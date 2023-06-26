@@ -85,18 +85,18 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: -30px;
+  text-align: center;
 }
 .about p {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: transparent;
   color: black;
   border: none;
   font-size: medium;
   font-weight: bold;
   font-family: 'Bungee', cursive;
-  font-size: 32px;
+  font-size: 2.5em;
+  margin-left: -1450px;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 </style>
