@@ -1,11 +1,15 @@
 <template>
   <nav>
-    <button @click="redirectTo('About')">{{ title }}</button>
-    <div class="nav-item">
+    <div class="nav-left">
+      <button id="linkify" @click="redirectTo('About')">{{ title }}</button>
+    </div>
+    <div class="nav-right">
       <button @click="redirectTo('AddURL')">{{ newUrl }}</button>
       <button @click="redirectTo('MyURLs')">{{ myUrls }}</button>
     </div>
-    <p>{{ about }}</p>
+    <div class="about">
+      <p>{{ about }}</p>
+    </div>
   </nav>
 </template>
 
@@ -31,7 +35,6 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Long+Cang&display=swap');
 
-
 * {
   box-sizing: border-box;
 }
@@ -39,11 +42,11 @@ export default {
 nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: rgba(8, 138, 104, 0.301);
   color: rgb(15, 15, 14);
   position: relative;
   margin-bottom: 20px;
-  align-items: center;
   height: 100px;
   width: 100%;
 }
@@ -53,17 +56,41 @@ button {
   background-color: transparent;
   color: black;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
   font-size: medium;
   font-weight: bold;
   font-family: 'Bungee', cursive;
   font-size: 21px;
 }
- p {
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  margin-right: -850px;
+}
+
+#linkify {
+  color: #08313A;
+  font-size: 2em;
+  margin: 10px;
+}
+
+.about {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: -30px;
+}
+.about p {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: transparent;
   color: black;
   border: none;
@@ -71,6 +98,5 @@ button {
   font-weight: bold;
   font-family: 'Bungee', cursive;
   font-size: 32px;
-  margin-left: 70px;
 }
 </style>
