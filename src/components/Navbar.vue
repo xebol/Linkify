@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <button @click="redirectTo('MyURLs')">{{ title }}</button>
+    <button @click="redirectTo('About')">{{ title }}</button>
     <div class="nav-item">
       <button @click="redirectTo('AddURL')">{{ newUrl }}</button>
       <button @click="redirectTo('MyURLs')">{{ myUrls }}</button>

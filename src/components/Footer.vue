@@ -2,8 +2,8 @@
   <footer>
     <p>Copyright &copy; 2023</p>
     <div class="footer-items">
-       <router-link to="/about">About</router-link>
-         <router-link to="/">Homepage</router-link>
+      <router-link to="/about">About</router-link>
+      <router-link to="/">Homepage</router-link>
     </div>
   </footer>
 </template>

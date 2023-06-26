@@ -12,6 +12,7 @@ import Navbar from "../components/Navbar.vue";
 import MyURLs from "../components/MyURLs.vue";
 import AddURL from "../components/AddURL.vue";
 import NewURL from "../components/NewURL.vue";
+import About from "./About.vue";
 
 export default {
   name: 'Urls',
@@ -19,7 +20,8 @@ export default {
     Navbar,
     MyURLs,
     AddURL,
-    NewURL
+    NewURL,
+    About
   },
   data() {
     return {
@@ -71,6 +73,8 @@ export default {
         this.addNewUrl = 'AddURL';
       } else if (componentName === 'MyURLs') {
         this.addNewUrl = 'MyURLs';
+      } else if ( componentName === 'About') {
+        this.$router.push('/about'); // Navigate to the About page
       }
     },
   },
