@@ -120,7 +120,4 @@ tbody tr:hover {
   padding-left: 10px
 ;
 }
-
-button[type="submit"]:hover {
-  background-color: #130d05;
-}</style>
+</style>
