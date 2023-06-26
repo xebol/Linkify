@@ -20,7 +20,9 @@ a {
 }
 
 footer {
-  margin-top: 250px;
+  margin-top: 300px;
+  margin-bottom: 20px;
+ position: relative;
   text-align: center;
   padding-left: 10px;
   display: flex;
