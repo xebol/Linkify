@@ -11,7 +11,7 @@ An app that allows users to shorten long URLs à la bit.ly.
 
 ## Project Setup
 
-1. Fork and clone the App from github: https://github.com/xebol/Linkify/tree/main
+1. Fork and clone the App from github: https://github.com/xebol/Linkify
 2. CD into the project root directory and run `npm install` to install dependencies. 
 3. The app is leveraging json-server as as fake backend to keep data persistent. To run the app on your local machine open two terminal windows, from the root directory of the project separately run, `npm run serve` to run the frontend and `npm run backend` to run the backend.
 
