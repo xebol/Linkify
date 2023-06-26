@@ -15,14 +15,23 @@ export default {
 </script>
 
 <style scoped>
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 a {
-  color: 333;
+  color: #333;
 }
 
 footer {
-  margin-top: 300px;
-  margin-bottom: 20px;
- position: relative;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
   text-align: center;
   padding-left: 10px;
   display: flex;
