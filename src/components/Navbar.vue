@@ -78,7 +78,6 @@ button {
 #linkify {
   color: #08313A;
   font-size: 2em;
-  margin: 10px;
 }
 
 .about {

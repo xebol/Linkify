@@ -45,6 +45,9 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Manrope&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Manrope&family=Montserrat&family=Plus+Jakarta+Sans:wght@600&display=swap');
+
 .urls-table {
   padding-top: 120px;
   padding-left: 25px;
@@ -60,6 +63,8 @@ th,
 td {
   padding: 15px;
   text-align: left;
+  font-family: 'Manrope', sans-serif;
+
 }
 
 td {
@@ -69,6 +74,8 @@ td {
 thead {
   background-color: #B1D8B7;
   font-size: 1.5em;
+  font-family: 'Manrope', sans-serif;
+
 }
 
 tbody tr:nth-child(even) {
@@ -109,8 +116,11 @@ tbody tr:hover {
   justify-content: space-between;
   margin-bottom: 10px;
   margin-top: -120px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  padding-left: 10px
+;
 }
 
 button[type="submit"]:hover {
-  background-color: #bd6f16;
+  background-color: #130d05;
 }</style>
